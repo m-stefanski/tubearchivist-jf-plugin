@@ -13,7 +13,7 @@ namespace Jellyfin.Plugin.TubeArchivistMetadata
         /// <summary>
         /// Plugin GUID.
         /// </summary>
-        public const string PluginGuid = "dc97d0c6-28b0-4242-afb4-5833ae1b3715";
+        public const string PluginGuid = "dc97d0c6-28b0-4242-afb4-5833ae1b3716";
 
         /// <summary>
         /// Providers name.

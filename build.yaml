@@ -1,6 +1,6 @@
 ---
 name: "TubeArchivistMetadata"
-guid: "dc97d0c6-28b0-4242-afb4-5833ae1b3715"
+guid: "dc97d0c6-28b0-4242-afb4-5833ae1b3716"
 imageUrl: https://raw.githubusercontent.com/tubearchivist/tubearchivist-jf-plugin/master/images/logo.png
 version: "1.4.4.0"
 targetAbi: "10.11.0.0"
