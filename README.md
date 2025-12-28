@@ -1,7 +1,7 @@
 <h1 align="center">Jellyfin TubeArchivist Plugin</h1>
 
 <p align="center">
-<img alt="Plugin Banner" src="https://raw.githubusercontent.com/tubearchivist/tubearchivist-jf-plugin/master/images/logo.png"/>
+<img alt="Plugin Banner" src="https://raw.githubusercontent.com/m_stefanski/tubearchivist-jf-plugin/master/images/logo.png"/>
 <br/>
 </p>
 
@@ -38,7 +38,7 @@ The plugin interacts with TubeArchivist APIs to fetch videos and channels metada
 1. Go to `Dashboard -> Plugins` and click on the `Manage Repositories` button
 2. Add a new repository with the following details:
 - Repository name: `TubeArchivistMetadata`
-- Repository URL: `https://github.com/tubearchivist/tubearchivist-jf-plugin/raw/master/manifest.json`
+- Repository URL: `https://github.com/m_stefanski/tubearchivist-jf-plugin/raw/master/manifest.json`
   ![Add repository](https://github.com/user-attachments/assets/337ba921-bc97-47ea-815c-c664cf7661a2)
 
 3. Go back to the catalog
@@ -62,7 +62,7 @@ Once installed, you have to configure the following parameters in the plugin con
     <li>Playback synchronization settings discussed in the <a href="#playback-synchronization">Playback synchronization</a> paragraph</li>
 </ul>
 
-![Plugin configuration](https://github.com/tubearchivist/tubearchivist-jf-plugin/assets/31162436/d34464ea-ddfb-44b3-9d3e-5d5974956c58)
+![Plugin configuration](https://github.com/m_stefanski/tubearchivist-jf-plugin/assets/31162436/d34464ea-ddfb-44b3-9d3e-5d5974956c58)
 
 
 ## Use the plugin
@@ -71,7 +71,7 @@ Once installed, you have to configure the following parameters in the plugin con
 _NOTE: If you are using Docker containers, it is important to mount the TubeArchivist media path into Jellyfin container as **read-only**, in order to avoid possible operations on the media files that will break TubeArchivist._ <br>
 1. Go to `Dashboard -> Libraries` and add a media library
 2. In the form select `Shows` as Content type, set a display name for the library and set the TubeArchivist media folder in the `Folders` section
-![Add library](https://github.com/tubearchivist/tubearchivist-jf-plugin/assets/31162436/1eca534e-0929-4134-8587-3cff0009f618)
+![Add library](https://github.com/m_stefanski/tubearchivist-jf-plugin/assets/31162436/1eca534e-0929-4134-8587-3cff0009f618)
 
 4. Scrolling down, uncheck all metadata and image providers except `TubeArchivist`. (You won't find TubeArchivist in seasons providers, so just disable everything there)
 5. Save and come back to Home, you will see the newly added library. Jellyfin will have executed the metadata fetching for you after the collection creation and then you will see the metadata and the images of channels and videos
