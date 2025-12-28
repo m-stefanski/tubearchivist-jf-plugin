@@ -58,6 +58,18 @@ namespace Jellyfin.Plugin.TubeArchivistMetadata.Providers
 
             if (video != null)
             {
+                var taPlaylists = await taApi.GetPlaylists().ConfigureAwait(true);
+
+                var playlistMap = taPlaylists
+                    .Where(p => !string.IsNullOrWhiteSpace(p.Id))
+                    .GroupBy(p => p.Id)
+                    .ToDictionary(g => g.Key, g => g.First().Name ?? "Other");
+
+                var playlistId = video.Playlist?.FirstOrDefault();
+                var seasonName = (!string.IsNullOrWhiteSpace(playlistId) && playlistMap.TryGetValue(playlistId, out var plName))
+                    ? plName
+                    : "Other";
+
                 var peopleInfo = new List<PersonInfo>();
                 PeopleHelper.AddPerson(peopleInfo, new PersonInfo
                 {
@@ -67,6 +79,7 @@ namespace Jellyfin.Plugin.TubeArchivistMetadata.Providers
                 });
                 result.HasMetadata = true;
                 result.Item = video.ToEpisode();
+                result.Item.SeasonName = seasonName; 
                 result.Item.Path = info.Path;
                 result.Provider = Name;
                 result.People = peopleInfo;
